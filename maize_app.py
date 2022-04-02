@@ -4,7 +4,7 @@ import cv2
 from keras.models import load_model
 import streamlit as st
 
-model = load_model('maize2.h5')
+model = load_model('model3.h5')
 
 CLASS_NAMES = ['Blight', 'Common_Rust', 'Grey_leaf_Spot', 'Healthy']
 
