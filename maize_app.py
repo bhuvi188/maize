@@ -25,7 +25,7 @@ st.markdown("Upload an image of the plant")
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 submit = st.button('Predict')
 #images = Image.open(images)
-images = images.resize((256, 256))
+#images = images.resize((256, 256))
 #images.shape = (1,256,256,3)
 
 #On predict button click
@@ -35,7 +35,7 @@ if submit:
         
         
         st.write(images.type)
-        st.write(images.size)
+        st.write(images.read)
 # show the image
         st.image(images)
         
