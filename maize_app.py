@@ -1,6 +1,7 @@
 #Library imports
 import numpy as np
 import cv2
+from PIL import Image
 import tensorflow as tf
 from keras.preprocessing import image
 from keras.models import load_model
