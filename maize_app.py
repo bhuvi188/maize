@@ -33,6 +33,7 @@ if submit:
         
         images = Image.open(images)
         images = images.resize((256, 256))
+        images=images.convert('RGB')
         st.write(images.mode)
         st.write(images.size)
         if images.mode is not 'RGB':
