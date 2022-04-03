@@ -5,7 +5,7 @@ import tensorflow as tf
 from keras.preprocessing import image
 from keras.models import load_model
 import streamlit as st
-
+class_names=['Blight', 'Common_Rust', 'Gray_Leaf_Spot']
 model = load_model('3maize.h5')
 def predict(model, img):
     img_array = tf.keras.preprocessing.image.img_to_array(img)
