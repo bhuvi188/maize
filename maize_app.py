@@ -22,15 +22,15 @@ st.title("Maize Disease Detection")
 st.markdown("Upload an image of the plant")
 
 #image = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
-image = image.load_img('crr.jpg')
+opencv_image = image.load_img('crr.jpg')
 submit = st.button('Predict')
 #On predict button click
 if submit:
 
 
     if image is not None:
-        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
+#        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
+   #     opencv_image = cv2.imdecode(file_bytes, 1)
         st.image(opencv_image)
         st.write(opencv_image.shape)
         opencv_image = cv2.resize(opencv_image, (256,256))
