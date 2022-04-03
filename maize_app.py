@@ -24,11 +24,9 @@ st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 images = Image.open(images)
-images = images.resize((256, 256))
+images = images.resize((256, 256,3))
 #img = image.load_img('geeks.jpg',target_size = (256,256))
-if len(images.shape) > 2 and images.shape[2] == 4:
-    #convert the image from RGBA2RGB
-    images = cv2.cvtColor(images, cv2.COLOR_RGBA2RGB)
+
 #On predict button click
 if submit:
 
