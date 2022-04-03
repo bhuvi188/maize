@@ -24,7 +24,6 @@ st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 images = Image.open(images)
-images = Image.save(images)
 images = images.resize((256, 256))
 #img = image.load_img('geeks.jpg',target_size = (256,256))
 
@@ -36,7 +35,7 @@ if submit:
     if images is not None:
         
         
-        
+        st.write(images.format)
         st.write(images.size)
 # show the image
         st.image(images)
