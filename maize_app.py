@@ -33,7 +33,7 @@ if submit:
     if images is not None:
         
         
-        st.write(images.mode)
+        st.write(images.type)
         st.write(images.size)
 # show the image
         st.image(images)
