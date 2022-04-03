@@ -27,7 +27,6 @@ if submit:
 
 
     if image is not None:
-        plt.figure(figsize=(15, 15))
         predicted_class, confidence = predict(model, image)
 
-        plt.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
+        st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
