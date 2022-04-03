@@ -39,4 +39,5 @@ if submit:
         
         predicted_class, confidence = predict(model, img)
         st.write(type(img))
+        st.write(type(images))
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
