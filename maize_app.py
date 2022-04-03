@@ -29,7 +29,7 @@ submit = st.button('Predict')
 if submit:
 
 
-    if imges is not None:
+    if images is not None:
 
       
         
