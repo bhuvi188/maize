@@ -30,7 +30,7 @@ if submit:
 
 
     if images is not None:
-
+        images = Image.open(images)
       
         
         predicted_class, confidence = predict(model, images)
