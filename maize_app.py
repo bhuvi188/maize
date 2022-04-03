@@ -23,7 +23,7 @@ st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 img = image.load_img('crr.jpg',target_size = (256,256))
-img.dtype
+print(type(img))
 submit = st.button('Predict')
 #On predict button click
 if submit:
