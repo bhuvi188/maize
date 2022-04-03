@@ -24,7 +24,6 @@ st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 images = Image.open(images)
-images = images.save("geeks.jpg")
 #img = image.load_img('geeks.jpg',target_size = (256,256))
 
 submit = st.button('Predict')
@@ -34,7 +33,11 @@ if submit:
 
     if images is not None:
         
-       
+        st.write(images.format)
+        st.write(images.mode)
+        st.write(images.size)
+# show the image
+        st.image(images)
         
         predicted_class, confidence = predict(model, images)
         
