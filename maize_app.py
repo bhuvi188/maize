@@ -23,7 +23,8 @@ st.title("Maize Disease Detection")
 st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
-img = image.load_img('crr.jpg',target_size = (256,256))
+images = Image.open(images)
+img = image.load_img(images,target_size = (256,256))
 
 submit = st.button('Predict')
 #On predict button click
@@ -31,8 +32,8 @@ if submit:
 
 
     if images is not None:
-        images = Image.open(images)
-        st.write(type(images))
+        
+       
         
         predicted_class, confidence = predict(model, images)
       
