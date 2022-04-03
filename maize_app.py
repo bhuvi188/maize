@@ -36,8 +36,7 @@ if submit:
         images=images.convert('RGB')
         st.write(images.mode)
         st.write(images.size)
-        if images.mode is not 'RGB':
-            st.write("Error")
+
 # show the image
         st.image(images)
         
