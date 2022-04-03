@@ -32,7 +32,7 @@ if submit:
 
     if images is not None:
         images = Image.open(images)
-      
+        images = cv2.resize(images, (256,256))
         
         predicted_class, confidence = predict(model, images)
       
