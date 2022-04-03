@@ -30,6 +30,11 @@ if submit:
     if image is not None:
         file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
         opencv_image = cv2.imdecode(file_bytes, 1)
+        st.image(opencv_image)
+        st.write(opencv_image.shape)
+        opencv_image = cv2.resize(opencv_image, (256,256))
+        #Converting image to 4 Dimension
+        opencv_image.shape = (1,256,256,3)
         predicted_class, confidence = predict(model, opencv_image)
 
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
