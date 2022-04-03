@@ -35,7 +35,7 @@ if submit:
         images = images.resize((256, 256))
         st.write(images.mode)
         st.write(images.size)
-        if images.mode is not RGB:
+        if images.mode is not 'RGB':
             st.write("Error")
 # show the image
         st.image(images)
