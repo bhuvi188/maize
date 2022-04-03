@@ -22,9 +22,9 @@ def predict(model, img):
 st.title("Maize Disease Detection")
 st.markdown("Upload an image of the plant")
 
-images1 = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
-images1 = Image.open(images1)
-images = images1.resize((256, 256))
+images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
+images = Image.open(images1)
+images = images.resize((256, 256))
 #img = image.load_img('geeks.jpg',target_size = (256,256))
 
 submit = st.button('Predict')
@@ -36,9 +36,9 @@ if submit:
         
         
         
-        st.write(images1.size)
+        st.write(images.size)
 # show the image
-        st.image(images1)
+        st.image(images)
         
         predicted_class, confidence = predict(model, images)
         
