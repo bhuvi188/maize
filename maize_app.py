@@ -34,7 +34,6 @@ if submit:
         
         
         st.write(images.mode)
-        st.write(images.shape)
         st.write(images.size)
 # show the image
         st.image(images)
