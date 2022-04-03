@@ -29,11 +29,11 @@ submit = st.button('Predict')
 if submit:
 
 
-    if img is not None:
+    if imges is not None:
 
       
         
-        predicted_class, confidence = predict(model, img)
+        predicted_class, confidence = predict(model, images)
       
      
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
