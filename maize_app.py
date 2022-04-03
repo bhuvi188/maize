@@ -33,7 +33,7 @@ if submit:
    #     opencv_image = cv2.imdecode(file_bytes, 1)
         st.image(opencv_image)
       #  st.write(opencv_image.shape)
-        opencv_image = cv2.resize(opencv_image, (256,256))
+       # opencv_image = cv2.resize(opencv_image, (256,256))
         #Converting image to 4 Dimension
         
         predicted_class, confidence = predict(model, opencv_image)
