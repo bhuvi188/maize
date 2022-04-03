@@ -6,7 +6,7 @@ import streamlit as st
 
 model = load_model('3maize.h5')
 
-CLASS_NAMES = ['Blight', 'Common_Rust', 'Grey_leaf_Spot', 'Healthy']
+CLASS_NAMES = ['Blight', 'Common_Rust', 'Grey_leaf_Spot']
 
 #Setting Title of App
 st.title("Maize Disease Detection")
