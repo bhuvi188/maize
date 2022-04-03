@@ -21,36 +21,22 @@ def predict(model, img):
 st.title("Maize Disease Detection")
 st.markdown("Upload an image of the plant")
 
-image = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
-#img = image.load_img('crr.jpg',target_size = (256,256))
+images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
+img = image.load_img('crr.jpg',target_size = (256,256))
 
 submit = st.button('Predict')
 #On predict button click
 if submit:
 
 
-    if image is not None:
-#        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
-   #     opencv_image = cv2.imdecode(file_bytes, 1)
-      #  st.image(img)
-      #  st.write(opencv_image.shape)
-       # opencv_image = cv2.resize(opencv_image, (256,256))
-        #Converting image to 4 Dimension
+    if img is not None:
+
+      
         
-      #  predicted_class, confidence = predict(model, img)
-      #  st.write(type(img))
-       # st.write(type(images))
-       # st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
-        
-        
-        
-        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
-        st.image(opencv_image)
-        st.write(opencv_image.shape)
-        opencv_image = cv2.resize(opencv_image, (256,256))
-        #Converting image to 4 Dimension
-        
-        predicted_class, confidence = predict(model, opencv_image)
-        
+        predicted_class, confidence = predict(model, img)
+      
+     
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
+        
+        
+       
