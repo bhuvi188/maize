@@ -20,7 +20,7 @@ def predict(model, img):
 
 #Setting Title of App
 st.title("Maize Disease Detection")
-st.markdown("Upload an image of the plant")
+st.markdown("Upload an image of Maize plant leaf which has disease")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 submit = st.button('Predict')
