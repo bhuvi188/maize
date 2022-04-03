@@ -33,5 +33,5 @@ if submit:
         opencv_image.shape = (1,256,256,3)
         #Predicting
         Y_pred = model.predict(opencv_image)
-        result = CLASS_NAMES[np.argmax(Y_pred[0])]
+        result = CLASS_NAMES[np.argmax(Y_pred)]
         st.title(str(result))
