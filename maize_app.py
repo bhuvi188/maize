@@ -34,7 +34,7 @@ if submit:
         st.write(opencv_image.shape)
         opencv_image = cv2.resize(opencv_image, (256,256))
         #Converting image to 4 Dimension
-        opencv_image.shape = (1,256,256,3)
+        opencv_image.shape = (None,256,256,3)
         predicted_class, confidence = predict(model, opencv_image)
 
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
