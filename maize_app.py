@@ -22,6 +22,7 @@ st.title("Maize Disease Detection")
 st.markdown("Upload an image of the plant")
 
 image = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
+image = image.load_img('crr.jpg')
 submit = st.button('Predict')
 #On predict button click
 if submit:
