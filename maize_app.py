@@ -26,7 +26,7 @@ images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 submit = st.button('Predict')
 images = Image.open(images)
 images = images.resize((256, 256))
-images=images.reshape(1,256,256,3)
+images.shape=(1,256,256,3)
 
 #On predict button click
 if submit:
