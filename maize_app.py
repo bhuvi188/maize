@@ -30,7 +30,6 @@ images = images.resize((256, 256))
 #On predict button click
 if submit:
 
-
     if images is not None:
         
         
