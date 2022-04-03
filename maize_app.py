@@ -1,12 +1,20 @@
 #Library imports
 import numpy as np
 import cv2
+from keras.preprocessing import image
 from keras.models import load_model
 import streamlit as st
 
 model = load_model('3maize.h5')
+def predict(model, img):
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)
 
-CLASS_NAMES = ['Blight', 'Common_Rust', 'Grey_leaf_Spot']
+    predictions = model.predict(img_array)
+
+    predicted_class = class_names[np.argmax(predictions[0])]
+    confidence = round(100 * (np.max(predictions[0])), 2)
+    return predicted_class, confidence
 
 #Setting Title of App
 st.title("Maize Disease Detection")
@@ -20,18 +28,11 @@ if submit:
 
     if image is not None:
 
-        # Convert the file to an opencv image.
-        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
+
+        plt.figure(figsize=(15, 15))
+        img = image
 
 
+        predicted_class, confidence = predict(model, img)
 
-        st.image(opencv_image, channels="BGR")
-        st.write(opencv_image.shape)
-        opencv_image = cv2.resize(opencv_image, (256,256))
-        #Converting image to 4 Dimension
-        opencv_image.shape = (1,256,256,3)
-        #Predicting
-        Y_pred = model.predict(opencv_image)
-        result = CLASS_NAMES[np.argmax(Y_pred)]
-        st.title(str(result))
+plt.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
