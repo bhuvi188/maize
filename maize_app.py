@@ -28,6 +28,8 @@ if submit:
 
 
     if image is not None:
-        predicted_class, confidence = predict(model, image)
+        file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
+        opencv_image = cv2.imdecode(file_bytes, 1)
+        predicted_class, confidence = predict(model, opencv_image)
 
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
