@@ -23,7 +23,7 @@ st.markdown("Upload an image of the plant")
 
 images = st.file_uploader("Choose an image...", type=['png', 'jpg' , 'jpeg'])
 img = image.load_img('crr.jpg',target_size = (256,256))
-print(type(img))
+
 submit = st.button('Predict')
 #On predict button click
 if submit:
@@ -38,5 +38,5 @@ if submit:
         #Converting image to 4 Dimension
         
         predicted_class, confidence = predict(model, img)
-
+        st.write(type(img))
         st.title(f"Predicted: {predicted_class}.\n Confidence: {confidence}%")
